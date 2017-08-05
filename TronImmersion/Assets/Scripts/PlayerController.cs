@@ -3,42 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	public float m_maxLean = 180;
-	private float m_speed = 5.0f;
-	private float m_currentSpeed;
-	public Vector3 m_maxVelocity;
+    private float m_turn_speed = 100.0f;
+	public float m_speed;
 	private Rigidbody m_rb;
+    Vector3 movementZ;
+    Vector3 rotationY;
 
-	private void Awake() {
+    private void Awake() {
 		m_rb = GetComponent<Rigidbody>();
 	}
 
-
-	void Start()
-	{
-		//m_rb.AddRelativeForce(transform.forward * 250.0f);
-	}
-
-	void Update() {
-		Move();
-		if (Input.GetKey(KeyCode.D)) {
-    		transform.Rotate(0, 1.5f ,0);
-		}
- 		if (Input.GetKey(KeyCode.A)) {
-    		transform.Rotate(0,-1.5f,0);
-		}
-	}
-	
-
 	void FixedUpdate(){
-		Move();
-		m_currentSpeed = m_rb.velocity.magnitude;
-		if (m_currentSpeed >= 25.0f) {
-			m_currentSpeed = 25.0f;
-		}
-	}
+        float y = Input.GetAxisRaw("Horizontal");
 
-	private void Move() {
-		m_rb.AddRelativeForce(transform.forward * m_speed);
-	}
+        handleDrive();
+        handleTurn(y);
+    }
+
+    void handleDrive()
+    {
+        movementZ = transform.forward * m_speed * Time.deltaTime;
+        m_rb.MovePosition(transform.position + movementZ);
+    }
+
+    void handleTurn(float y)
+    {
+        rotationY.Set(0f, y, 0f);
+        rotationY = rotationY.normalized * m_turn_speed;
+        Quaternion deltaRotation = Quaternion.Euler(rotationY * Time.deltaTime);
+        m_rb.MoveRotation(m_rb.rotation * deltaRotation);
+    }
 }
