@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	public float m_maxLean = 180;
-	private float m_speed = 5.0f;
+	private float m_speed = 2.0f;
 	private float m_currentSpeed;
 	public Vector3 m_maxVelocity;
 	private Rigidbody m_rb;
@@ -33,9 +33,6 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate(){
 		Move();
 		m_currentSpeed = m_rb.velocity.magnitude;
-		if (m_currentSpeed >= 25.0f) {
-			m_currentSpeed = 25.0f;
-		}
 	}
 
 	private void Move() {
