@@ -20,13 +20,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-	 if (Input.GetKey(KeyCode.D)) {
+		Move();
+		if (Input.GetKey(KeyCode.D)) {
     		transform.Rotate(0, 1.5f ,0);
-	 }
- 	if (Input.GetKey(KeyCode.A)) {
-    	transform.Rotate(0,-1.5f,0);
+		}
+ 		if (Input.GetKey(KeyCode.A)) {
+    		transform.Rotate(0,-1.5f,0);
+		}
 	}
-	}
+	
 
 	void FixedUpdate(){
 		Move();
