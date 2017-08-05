@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class TrailRendererWithCollider : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public TrailRenderer trail;
+	public bool colliderIsTrigger = true;
+	public bool colliderEnabled = true;
+
+	private new BoxCollider[] walls;
+
 }
