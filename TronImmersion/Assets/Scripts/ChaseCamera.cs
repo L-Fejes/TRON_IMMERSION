@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ChaseCamera : MonoBehaviour {
 	public Transform m_target;
-	public float m_distance			= 1.5f;
+	public float m_distance			= 3.0f;
 	public float m_height			= 2.5f;
 	public float m_heightDamping	= 3.0f;
-	public float m_rotationDamping	= 15.0f;
+	public float m_rotationDamping	= 10.0f;
 
 	void FixedUpdate() {
 		// Getting the current rotation of the camera
