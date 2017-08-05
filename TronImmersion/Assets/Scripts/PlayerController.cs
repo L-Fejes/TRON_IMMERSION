@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     private float m_turn_speed = 100.0f;
 	public float m_speed;
 	private Rigidbody m_rb;
+    public bool m_is_grounded = false;
     Vector3 movementZ;
     Vector3 rotationY;
 
@@ -14,10 +15,31 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-        float y = Input.GetAxisRaw("Horizontal");
+        if (m_is_grounded)
+        {
+            float y = Input.GetAxisRaw("Horizontal");
 
-        handleDrive();
-        handleTurn(y);
+            handleDrive();
+            handleTurn(y);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("grid"))
+        {
+            //Debug.Log("in contact with ground");
+            m_is_grounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("grid"))
+        {
+            //Debug.Log("lost contact with ground");
+            m_is_grounded = false;
+        }
     }
 
     void handleDrive()
@@ -33,4 +55,5 @@ public class PlayerController : MonoBehaviour {
         Quaternion deltaRotation = Quaternion.Euler(rotationY * Time.deltaTime);
         m_rb.MoveRotation(m_rb.rotation * deltaRotation);
     }
+
 }

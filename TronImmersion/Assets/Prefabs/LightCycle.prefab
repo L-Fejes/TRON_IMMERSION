@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 75
+  m_is_grounded: 0
 --- !u!124 &124633659959156662
 Behaviour:
   m_ObjectHideFlags: 1

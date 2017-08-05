@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23907245669418940}
   m_Layer: 0
   m_Name: TheGrid (1)
-  m_TagString: Untagged
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23602202169506356}
   m_Layer: 0
   m_Name: GridLayer
-  m_TagString: Untagged
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,9 +54,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4509126427280640}
   - component: {fileID: 65986444202338180}
+  - component: {fileID: 54782632876335408}
   m_Layer: 0
   m_Name: TheGrid
-  m_TagString: Untagged
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +74,7 @@ GameObject:
   - component: {fileID: 23737043778718650}
   m_Layer: 0
   m_Name: TheGrid (2)
-  m_TagString: Untagged
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,6 +251,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341062892924474}
   m_Mesh: {fileID: 4300000, guid: 1678f1a9d0400c543b75f9868d65360b, type: 3}
+--- !u!54 &54782632876335408
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339483273958066}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65986444202338180
 BoxCollider:
   m_ObjectHideFlags: 1
