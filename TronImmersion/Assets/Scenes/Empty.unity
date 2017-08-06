@@ -281,13 +281,7 @@ Prefab:
       propertyPath: m_gc
       value: 
       objectReference: {fileID: 1965375727}
-    - target: {fileID: 95547623043895210, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 95547623043895210, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &531234875 stripped

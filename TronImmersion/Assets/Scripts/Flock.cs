@@ -14,6 +14,7 @@ public class Flock : MonoBehaviour {
     private Vector3 rotationY;
     public bool m_isAlive;
     public GameController m_gc;
+    public GameObject explosion;
 
     Vector3 averageHeading;
     Vector3 averagePosition;
@@ -30,6 +31,9 @@ public class Flock : MonoBehaviour {
         if (other.gameObject.CompareTag("wall"))
         {
             m_isAlive = false;
+
+            Instantiate(explosion, transform.position, transform.rotation);
+
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver)
             {
@@ -64,6 +68,9 @@ public class Flock : MonoBehaviour {
         if (other.CompareTag("wall"))
         {
             m_isAlive = false;
+
+            Instantiate(explosion, transform.position, transform.rotation);
+
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver)
             {

@@ -569,6 +569,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 75
   m_sight_range: 60
+  m_isAlive: 0
+  m_gc: {fileID: 0}
+  explosion: {fileID: 1179309621834496, guid: bb348a8959f4a764cae82df4401be87d, type: 2}
 --- !u!198 &198106917939586328
 ParticleSystem:
   m_ObjectHideFlags: 1
