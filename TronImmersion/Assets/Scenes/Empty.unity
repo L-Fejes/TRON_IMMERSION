@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightCyclePrefab: {fileID: 1014175614238896, guid: 14b0294447539264dbf604c6bfb48a0c,
     type: 2}
+  RecognizerPrefab: {fileID: 1713916288289802, guid: e84b6281c4f362d4c9fc43bb3d5e148f,
+    type: 2}
 --- !u!4 &132127645
 Transform:
   m_ObjectHideFlags: 0
