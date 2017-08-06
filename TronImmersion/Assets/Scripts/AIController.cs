@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class AIController : MonoBehaviour
+{
     private float m_turn_speed = 100.0f;
-	public float m_speed;
-	private Rigidbody m_rb;
+    public float m_speed;
+    private Rigidbody m_rb;
     public bool m_is_grounded = false;
     Vector3 movementZ;
     Vector3 rotationY;
 
-    private void Awake() {
-		m_rb = GetComponent<Rigidbody>();
-	}
+    public int m_intelligence = 0;
 
-	void FixedUpdate(){
+    private void Awake()
+    {
+        m_rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
         if (m_is_grounded)
         {
-            float y = Input.GetAxisRaw("Horizontal");
-            //Debug.Log(y);
+            float y = nextAction();
+            
             handleDrive();
             handleTurn(y);
         }
@@ -44,7 +49,8 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("trail")) {
+        if (other.gameObject.CompareTag("trail"))
+        {
             Debug.Log("Hit a wall");
         }
     }
@@ -63,4 +69,15 @@ public class PlayerController : MonoBehaviour {
         m_rb.MoveRotation(m_rb.rotation * deltaRotation);
     }
 
+    private float nextAction()
+    {
+        float new_y = 0;
+
+        if (m_intelligence == 0)
+        {
+            new_y = Random.Range(-1.0f, 1.0f);
+        }
+
+        return (new_y);
+    }
 }
