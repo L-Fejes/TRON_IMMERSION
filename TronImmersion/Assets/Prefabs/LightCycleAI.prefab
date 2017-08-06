@@ -567,4 +567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 75
   m_is_grounded: 0
-  m_intelligence: 0
+  m_intelligence: 1
+  m_prev_decision: 0
+  m_sight_range: 50

@@ -12,6 +12,8 @@ public class AIController : MonoBehaviour
     Vector3 rotationY;
 
     public int m_intelligence = 0;
+    public float m_prev_decision = 0;
+    public int m_sight_range = 50;
 
     private void Awake()
     {
@@ -88,7 +90,38 @@ public class AIController : MonoBehaviour
         {
             new_y = Random.Range(-1.0f, 1.0f);
         }
+        else if (m_intelligence == 1)
+        {
+            if (Physics.Raycast(transform.position, transform.forward, m_sight_range))
+            {
+                Debug.Log("There is something in front of the object!");
 
+                if (m_prev_decision != 0) {
+                    Debug.Log("Keep Turning!");
+                    new_y = m_prev_decision;
+                }
+                else
+                {
+                    Debug.Log("Better get out of the way!");
+                    do
+                    {
+                        new_y = Random.Range(-1.0f, 1.0f);
+                    }
+                    while (new_y != 0);
+                }
+            }
+            else
+            {
+                new_y = Random.Range(-1.0f, 1.0f);
+
+                if (Mathf.Abs(new_y) < 0.5)
+                {
+                    new_y = 0;
+                }
+            }
+        }
+
+        m_prev_decision = new_y;
         return (new_y);
     }
 }
