@@ -29,6 +29,15 @@ public class AIController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("wall"))
+        {
+            this.gameObject.SetActive(false);
+            Debug.Log("You Lose Bitch");
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("grid"))
@@ -47,11 +56,13 @@ public class AIController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+
+    void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("trail"))
+        if (other.gameObject.CompareTag("wall"))
         {
-            Debug.Log("Hit a wall");
+            this.gameObject.SetActive(false);
+            Debug.Log("You Lose Bitch");
         }
     }
 
