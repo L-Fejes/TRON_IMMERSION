@@ -481,8 +481,8 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1351663106636282}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961b9ef49ae3eab48800e03308d734e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_turn_speed: 120
   m_speed: 75
   m_is_grounded: 0
 --- !u!114 &114853039351224888
@@ -638,7 +639,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -481982629
+  randomSeed: -818093918
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    private float m_turn_speed = 100.0f;
+    private float m_turn_speed = 120.0f;
     public float m_speed;
     private Rigidbody m_rb;
     public bool m_is_grounded = false;

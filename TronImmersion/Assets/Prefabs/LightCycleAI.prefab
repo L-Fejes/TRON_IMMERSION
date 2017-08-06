@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 95191867896659768}
   - component: {fileID: 54834055337014316}
   - component: {fileID: 65529491084530940}
-  - component: {fileID: 114249043075246560}
+  - component: {fileID: 114579539760364980}
   m_Layer: 0
   m_Name: LightCycleAI
   m_TagString: Untagged
@@ -480,13 +480,13 @@ TrailRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845162941791928}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb671a9d9f049bd449d56d3ce97be586, type: 2}
+  - {fileID: 2100000, guid: 9c4a4e4b8e38587499940ff4675037bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -556,7 +556,7 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 2
   m_Autodestruct: 0
---- !u!114 &114249043075246560
+--- !u!114 &114579539760364980
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -564,14 +564,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1014175614238896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f01050ff8cc6dff41820e6487106f4f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 04c51f1c05d05164687ced277edf9262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 75
-  m_is_grounded: 0
-  m_intelligence: 1
-  m_prev_decision: 0
-  m_sight_range: 75
+  m_sight_range: 60
 --- !u!198 &198106917939586328
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -629,7 +626,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -586483871
+  randomSeed: 705044323
   InitialModule:
     serializedVersion: 3
     enabled: 1
