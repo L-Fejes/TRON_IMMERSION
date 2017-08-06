@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     private float m_turn_speed = 100.0f;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public bool m_is_grounded = false;
     Vector3 movementZ;
     Vector3 rotationY;
+    private bool win;
 
     private void Awake() {
 		m_rb = GetComponent<Rigidbody>();
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
             this.gameObject.SetActive(false);
+            win = false;
+            gameOver(win);
             Debug.Log("You Lose Bitch");
         }
     }
@@ -53,6 +57,8 @@ public class PlayerController : MonoBehaviour {
     void OnParticleCollision(GameObject other) {
         if (other.gameObject.CompareTag("wall")) {
             this.gameObject.SetActive(false);
+            win = false;
+            gameOver(win);
             Debug.Log("You Lose Bitch");
         }
     }
@@ -69,6 +75,12 @@ public class PlayerController : MonoBehaviour {
         rotationY = rotationY.normalized * m_turn_speed;
         Quaternion deltaRotation = Quaternion.Euler(rotationY * Time.deltaTime);
         m_rb.MoveRotation(m_rb.rotation * deltaRotation);
+    }
+
+    void gameOver(bool win) {
+        if (win || !win) {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+        }
     }
 
 }
