@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LightCyclePrefab: {fileID: 1014175614238896, guid: 14b0294447539264dbf604c6bfb48a0c,
     type: 2}
+  RecognizerPrefab: {fileID: 1713916288289802, guid: e84b6281c4f362d4c9fc43bb3d5e148f,
+    type: 2}
 --- !u!4 &132127645
 Transform:
   m_ObjectHideFlags: 0
@@ -956,7 +958,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 373e8f74854d52244bedc4edd3aa1c06, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.33
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1037,7 +1039,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 9e24940b6c310d943a2445ce0dc70963, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.651
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1123,7 +1125,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: efe1711dbe7964d4489a6b028a7effd7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.22
   m_Pitch: 0.75
   Loop: 1
   Mute: 0
