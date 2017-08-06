@@ -11,6 +11,7 @@ public class TrailRendererWithCollider : MonoBehaviour {
 
 	GameObject trailMesh;
 	MeshCollider meshCollider;
+	MeshFilter filtermesh;
 
 
 	void Awake()
