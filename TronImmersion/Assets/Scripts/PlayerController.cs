@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
     public bool m_isAlive = true;
     public GameController m_gc;
     public GameObject explosion;
+    public AudioClip m_explosionSound;
+    public AudioSource m_audio;
 
     private void Awake() {
 		m_rb = GetComponent<Rigidbody>();
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("wall")) {
             m_isAlive = false;
 
+            m_audio.PlayOneShot(m_explosionSound);
             Instantiate(explosion, transform.position, transform.rotation);
 
             this.gameObject.SetActive(false);
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("wall")) {
             m_isAlive = false;
 
+            m_audio.PlayOneShot(m_explosionSound);
             Instantiate(explosion, transform.position, transform.rotation);
 
             this.gameObject.SetActive(false);

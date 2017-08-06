@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour{
     
     public GameObject m_grid;
     public PlayerController m_player;
+    //public AIController m_challenger;
+
     public GameObject[] m_walls;
 
     public bool m_gameOver;
@@ -14,7 +16,6 @@ public class GameController : MonoBehaviour{
     void Awake() {
         m_gameOver = false;
     }
-
 
     public void AIKilled()
     {
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour{
         m_gameOver = true;
     }
 
-    public void Lose() {
+    void Lose() {
         Time.timeScale = 0.0f;
         SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
         Time.timeScale = 1.0f;
