@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
-	public int timeLeft = 5;
+	public int timeLeft = 3;
     public Text countdownText;
 
     // Use this for initialization
@@ -16,12 +17,13 @@ public class Timer : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        countdownText.text = ("Time Left = " + timeLeft);
+        countdownText.text = ("" + timeLeft);
 
         if (timeLeft <= 0)
         {
             StopCoroutine("LoseTime");
-            countdownText.text = "Times Up!";
+            countdownText.text = "0";
+			SceneManager.LoadScene("Empty", LoadSceneMode.Single);
         }
     }
 
