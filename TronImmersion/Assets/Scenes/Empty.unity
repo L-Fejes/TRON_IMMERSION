@@ -234,7 +234,7 @@ Transform:
   m_Children:
   - {fileID: 1428107253}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &531234871
 Prefab:
@@ -280,9 +280,21 @@ Prefab:
       propertyPath: m_gc
       value: 
       objectReference: {fileID: 1965375727}
-    m_RemovedComponents: []
+    - target: {fileID: 95547623043895210, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 95547623043895210, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &531234875 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114814846315731688, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
+    type: 2}
+  m_PrefabInternal: {fileID: 531234871}
+  m_Script: {fileID: 11500000, guid: 961b9ef49ae3eab48800e03308d734e5, type: 3}
 --- !u!4 &531234877 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039008918861144, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
@@ -506,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grid: {fileID: 1442278749}
-  m_player: {fileID: 0}
+  m_player: {fileID: 531234875}
   m_challenger: {fileID: 0}
   m_walls:
   - {fileID: 0}

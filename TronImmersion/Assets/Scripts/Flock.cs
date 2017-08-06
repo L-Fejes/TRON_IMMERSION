@@ -12,6 +12,8 @@ public class Flock : MonoBehaviour {
     public int m_sight_range = 60;
     private Vector3 movementZ;
     private Vector3 rotationY;
+    public bool m_isAlive;
+    public GameController m_gc;
 
     Vector3 averageHeading;
     Vector3 averagePosition;
@@ -20,14 +22,21 @@ public class Flock : MonoBehaviour {
     // Use this for initialization
     void Start () {
         m_rb = GetComponent<Rigidbody>();
+        m_gc = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("wall"))
         {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
-            Debug.Log("You Lose Bitch");
+            if (!m_gc.m_gameOver)
+            {
+                m_gc.AIKilled();
+                //m_gc.GameOver(true);
+            }
+
         }
     }
 
@@ -52,10 +61,15 @@ public class Flock : MonoBehaviour {
 
     void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("wall"))
+        if (other.CompareTag("wall"))
         {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
-            Debug.Log("You Lose Bitch");
+            if (!m_gc.m_gameOver)
+            {
+                m_gc.AIKilled();
+                //m_gc.GameOver(true);
+            }
         }
     }
 

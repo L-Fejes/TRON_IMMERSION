@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour {
             m_isAlive = false;
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver) {
-                m_gc.GameOver(false);
+                m_gc.Lose();
+                //m_gc.GameOver();
             }
         }
     }
@@ -61,7 +62,8 @@ public class PlayerController : MonoBehaviour {
             m_isAlive = false;
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver) {
-                m_gc.GameOver(false);
+                m_gc.Lose();
+                //m_gc.GameOver(false);
             }
         }
     }
