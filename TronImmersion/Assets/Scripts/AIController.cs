@@ -92,31 +92,35 @@ public class AIController : MonoBehaviour
         }
         else if (m_intelligence == 1)
         {
-            if (Physics.Raycast(transform.position, transform.forward, m_sight_range))
-            {
-                Debug.Log("There is something in front of the object!");
+            if (Physics.Raycast(transform.position - 2 * transform.right, transform.forward - 0.5f * transform.right, m_sight_range) ||
+                Physics.Raycast(transform.position + 2 * transform.right, transform.forward + 0.5f * transform.right, m_sight_range)) { 
 
                 if (m_prev_decision != 0) {
-                    Debug.Log("Keep Turning!");
+                    //Debug.Log("Keep Turning!");
                     new_y = m_prev_decision;
                 }
                 else
                 {
-                    Debug.Log("Better get out of the way!");
-                    do
-                    {
-                        new_y = Random.Range(-1.0f, 1.0f);
-                    }
-                    while (new_y != 0);
-                }
-            }
-            else
-            {
-                new_y = Random.Range(-1.0f, 1.0f);
+                    Debug.Log("There is something in front of the object!");
 
-                if (Mathf.Abs(new_y) < 0.5)
-                {
-                    new_y = 0;
+                    RaycastHit hitForwardLeft;
+                    RaycastHit hitForwardRight;
+
+                    Physics.Raycast(transform.position - 2*transform.right, transform.forward - 0.5f*transform.right, out hitForwardLeft);
+                    Physics.Raycast(transform.position + 2*transform.right, transform.forward + 0.5f*transform.right, out hitForwardRight);
+
+                    Debug.Log("LeftDistance: " + hitForwardLeft.distance + ", RightDistance: " + hitForwardRight.distance);
+
+                    if (hitForwardLeft.distance < hitForwardRight.distance)
+                    {
+                        Debug.Log("Turn right!");
+                        new_y = 1;
+                    }
+                    else
+                    {
+                        Debug.Log("Turn left!");
+                        new_y = -1;
+                    }
                 }
             }
         }
