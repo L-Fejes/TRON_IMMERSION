@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 rotationY;
     public bool m_isAlive = true;
     public GameController m_gc;
+    public GameObject explosion;
 
     private void Awake() {
 		m_rb = GetComponent<Rigidbody>();
@@ -30,6 +31,9 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
             m_isAlive = false;
+
+            Instantiate(explosion, transform.position, transform.rotation);
+
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver) {
                 m_gc.Lose();
@@ -60,6 +64,9 @@ public class PlayerController : MonoBehaviour {
     void OnParticleCollision(GameObject other) {
         if (other.gameObject.CompareTag("wall")) {
             m_isAlive = false;
+
+            Instantiate(explosion, transform.position, transform.rotation);
+
             this.gameObject.SetActive(false);
             if (!m_gc.m_gameOver) {
                 m_gc.Lose();
