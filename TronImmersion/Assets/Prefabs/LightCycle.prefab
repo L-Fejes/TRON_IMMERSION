@@ -555,7 +555,7 @@ MonoBehaviour:
   m_is_grounded: 0
   m_isAlive: 1
   m_gc: {fileID: 0}
-  explosion: {fileID: 1586125000337530, guid: 48379ec6aa10dee48ab56b7744366184, type: 2}
+  explosion: {fileID: 1285243215020868, guid: 5c5a37d93d1eefa409b7042dd429d2ba, type: 2}
 --- !u!114 &114853039351224888
 MonoBehaviour:
   m_ObjectHideFlags: 1
