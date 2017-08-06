@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour {
     public bool m_is_grounded = false;
     Vector3 movementZ;
     Vector3 rotationY;
-    public bool alive = true;
+    public bool m_isAlive = true;
+    public GameController m_gc;
 
     private void Awake() {
 		m_rb = GetComponent<Rigidbody>();
@@ -28,8 +29,11 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("wall")) {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
-            alive = false;
+            if (!m_gc.m_gameOver) {
+                m_gc.GameOver(false);
+            }
         }
     }
 
@@ -54,8 +58,11 @@ public class PlayerController : MonoBehaviour {
 
     void OnParticleCollision(GameObject other) {
         if (other.gameObject.CompareTag("wall")) {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
-            alive = false;
+            if (!m_gc.m_gameOver) {
+                m_gc.GameOver(false);
+            }
         }
     }
 
@@ -72,5 +79,4 @@ public class PlayerController : MonoBehaviour {
         Quaternion deltaRotation = Quaternion.Euler(rotationY * Time.deltaTime);
         m_rb.MoveRotation(m_rb.rotation * deltaRotation);
     }
-
 }
