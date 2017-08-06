@@ -42,6 +42,13 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("trail")) {
+            Debug.Log("Hit a wall");
+        }
+    }
+
     void handleDrive()
     {
         movementZ = transform.forward * m_speed * Time.deltaTime;
