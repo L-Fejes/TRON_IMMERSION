@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour{
         m_gameOver = true;
     }
 
-    void Lose() {
+    public void Lose() {
         Time.timeScale = 0.0f;
         SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
         Time.timeScale = 1.0f;
