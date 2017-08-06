@@ -10,10 +10,11 @@ public class AIController : MonoBehaviour
     public bool m_is_grounded = false;
     Vector3 movementZ;
     Vector3 rotationY;
-
     public int m_intelligence = 0;
     public float m_prev_decision = 0;
     public int m_sight_range = 50;
+    public bool m_isAlive;
+    public GameController m_gc;
 
     private void Awake()
     {
@@ -35,7 +36,12 @@ public class AIController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("wall"))
         {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
+            if (!m_gc.m_gameOver) { 
+                m_gc.GameOver(true);
+            }
+
         }
     }
 
@@ -62,7 +68,11 @@ public class AIController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("wall"))
         {
+            m_isAlive = false;
             this.gameObject.SetActive(false);
+            if (!m_gc.m_gameOver) { 
+                m_gc.GameOver(true);
+            }
         }
     }
 
