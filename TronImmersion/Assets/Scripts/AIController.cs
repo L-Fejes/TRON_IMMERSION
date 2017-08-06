@@ -36,7 +36,6 @@ public class AIController : MonoBehaviour
         if (other.gameObject.CompareTag("wall"))
         {
             this.gameObject.SetActive(false);
-            Debug.Log("You Lose Bitch");
         }
     }
 
@@ -64,7 +63,6 @@ public class AIController : MonoBehaviour
         if (other.gameObject.CompareTag("wall"))
         {
             this.gameObject.SetActive(false);
-            Debug.Log("You Lose Bitch");
         }
     }
 

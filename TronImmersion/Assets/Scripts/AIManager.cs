@@ -6,7 +6,7 @@ public class AIManager : MonoBehaviour {
 
     public GameObject LightCyclePrefab;
     public static int startZoneSize = 300;
-    static int numOfAI = 10;
+    static int numOfAI = 3;
     public static GameObject[] allAI = new GameObject[numOfAI];
 
     public static Vector3 goalPosition = Vector3.zero;
