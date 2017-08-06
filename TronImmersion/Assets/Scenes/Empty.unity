@@ -108,6 +108,48 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &132127643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 132127645}
+  - component: {fileID: 132127644}
+  m_Layer: 0
+  m_Name: AIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &132127644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 132127643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be591612b3484354e8cdaee2591f5d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightCyclePrefab: {fileID: 1014175614238896, guid: 14b0294447539264dbf604c6bfb48a0c,
+    type: 2}
+--- !u!4 &132127645
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 132127643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.6875, y: 109.625, z: 85.3125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &150912633
 Prefab:
   m_ObjectHideFlags: 0
@@ -192,7 +234,7 @@ Transform:
   m_Children:
   - {fileID: 1428107253}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &531234871
 Prefab:
@@ -241,11 +283,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &531234872 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1947973314082330, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
-    type: 2}
-  m_PrefabInternal: {fileID: 531234871}
 --- !u!4 &531234877 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039008918861144, guid: 461cf1ec6da53124e9ca2e5f0c5fdc38,
@@ -469,10 +506,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grid: {fileID: 1442278749}
-  m_player: {fileID: 531234872}
+  m_player: {fileID: 0}
   m_challenger: {fileID: 0}
   m_walls:
   - {fileID: 0}
+  m_gameOver: 0
 --- !u!4 &1965375728
 Transform:
   m_ObjectHideFlags: 0
@@ -484,5 +522,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
