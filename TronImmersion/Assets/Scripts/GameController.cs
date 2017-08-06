@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour{
     void Awake() {
         m_gameOver = false;
     }
-
     public void AIKilled()
     {
         Debug.Log("Someone is dead");
